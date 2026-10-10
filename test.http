@@ -1,0 +1,67 @@
+### 1. Lấy danh sách tất cả các payment
+GET http://localhost:8084/api/payments
+Content-Type: application/json
+
+### ==========================================
+### TẠO 3 PAYMENT RIÊNG BIỆT (CREATE)
+### ==========================================
+
+### 2. Tạo Payment thứ nhất
+POST http://localhost:8084/api/payments
+Content-Type: application/json
+
+{
+  "paymentReference": "PAY-REF-001",
+  "orderId": 101,
+  "amount": 150.00,
+  "paymentMethod": "CREDIT_CARD",
+  "status": "SUCCESS"
+}
+
+### 3. Tạo Payment thứ hai
+POST http://localhost:8084/api/payments
+Content-Type: application/json
+
+{
+  "paymentReference": "PAY-REF-002",
+  "orderId": 102,
+  "amount": 250.50,
+  "paymentMethod": "PAYPAL",
+  "status": "PENDING"
+}
+
+### 4. Tạo Payment thứ ba
+POST http://localhost:8084/api/payments
+Content-Type: application/json
+
+{
+  "paymentReference": "PAY-REF-003",
+  "orderId": 103,
+  "amount": 99.99,
+  "paymentMethod": "BANK_TRANSFER",
+  "status": "SUCCESS"
+}
+
+### ==========================================
+### CÁC THao tác CRUD KHÁC
+### ==========================================
+
+### 5. Lấy thông tin payment theo ID (ví dụ ID = 1)
+GET http://localhost:8084/api/payments/1
+Content-Type: application/json
+
+### 6. Cập nhật thông tin payment ID = 1
+PUT http://localhost:8084/api/payments/1
+Content-Type: application/json
+
+{
+  "paymentReference": "PAY-REF-001-UPDATED",
+  "orderId": 101,
+  "amount": 160.00,
+  "paymentMethod": "CREDIT_CARD",
+  "status": "SUCCESS"
+}
+
+### 7. Xóa payment ID = 2
+DELETE http://localhost:8084/api/payments/2
+
